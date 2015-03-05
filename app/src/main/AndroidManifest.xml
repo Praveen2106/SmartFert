@@ -23,6 +23,9 @@
         <activity android:name=".CaptureDetails"
             android:screenOrientation="landscape"></activity>
 
+        <activity android:name=".SoilFertilizerManagement"
+            android:screenOrientation="landscape"></activity>
+
     </application>
 
 </manifest>

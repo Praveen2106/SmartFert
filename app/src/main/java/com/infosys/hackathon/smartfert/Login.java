@@ -2,6 +2,7 @@ package com.infosys.hackathon.smartfert;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +14,9 @@ public class Login extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+            return;
+
         setContentView(R.layout.form_login);
         findViewById(R.id.bt_login).setOnClickListener(new View.OnClickListener() {
             @Override
