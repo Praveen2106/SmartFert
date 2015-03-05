@@ -1,0 +1,187 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/white"
+    android:layout_weight="2"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Overview">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow android:gravity="center" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <EditText android:layout_weight="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:hint="@string/soil_health_card"
+                    android:textColor="@android:color/black"/>
+
+                <ImageButton android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:background="@android:color/transparent"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:textColor="@android:color/black"/>
+
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Farmer Name"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Soil Lab No"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"
+                    />
+            </TableRow>
+
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Irrigation Type" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Address"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Current Crop"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:ellipsize="end"
+                    android:paddingRight="@dimen/dimen_16dp"
+
+                    android:maxLines="2"
+                    android:textColor="@android:color/black"
+                    android:text="Agriculture Climatic\nZone"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@android:color/black"
+                    android:text="Survey No"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@android:color/black"
+                    android:text="Crop Rotation"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_16sp"
+                    android:textColor="@android:color/black"
+                    android:text="XXX"  android:textStyle="bold"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+</LinearLayout>
