@@ -6,6 +6,7 @@
     <dimen name="dimen_8dp">8dp</dimen>
     <dimen name="dimen_16dp">16dp</dimen>
 
-    <dimen name="dimen_12sp">12sp</dimen>
-    <dimen name="dimen_16sp">16sp</dimen>
+    <dimen name="dimen_subtext">12sp</dimen>
+    <dimen name="dimen_label">16sp</dimen>
+    <dimen name="dimen_title">20sp</dimen>
 </resources>

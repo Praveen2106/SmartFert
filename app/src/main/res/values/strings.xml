@@ -4,7 +4,11 @@
     <string name="app_name">SmartFert</string>
     <string name="hello_world">Hello world!</string>
 
-<string name="login">Login</string>
+    <string name="login">Login</string>
     <string name="search">Search</string>
     <string name="soil_health_card">Soil Health Card</string>
+
+    <string name="login_title">Welcome to SmartFert</string>
+    <string name="login_user_name">User Name</string>
+    <string name="login_password">Password</string>
 </resources>
