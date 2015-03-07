@@ -32,15 +32,15 @@
         <SoilLabNumber>Lab1034</SoilLabNumber>
         <FarmerName>Vishnu Kumar</FarmerName>
         <IrrigationType>Well</IrrigationType>
-        <CurrentCrop>Paddy</CurrentCrop>
+        <CurrentCrop>Wheat</CurrentCrop>
         <ClimaticZone>Southern Plateau</ClimaticZone>
         <CropRotation>Turmeric</CropRotation>
         <SampleDate>07-03-2015</SampleDate>
         <SoilTexture>Sandy</SoilTexture>
-        <CCcontent>NA</CCcontent>
-        <SaltContent>NA</SaltContent>
+        <CCcontent>Medium</CCcontent>
+        <SaltContent>Good</SaltContent>
         <PHContent>NA</PHContent>
-        <ReportSentDate>NA</ReportSentDate>
+        <ReportSentDate>07-02-2015</ReportSentDate>
         <AvblOC>NA</AvblOC>
         <BlanketOC>NA</BlanketOC>
         <AvblNitrogen>50</AvblNitrogen>

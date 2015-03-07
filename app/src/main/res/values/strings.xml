@@ -41,7 +41,7 @@
         <item>Wheat</item>
         <item>Sugarcane</item>
         <item>Cotton</item>
-        <item>Others</item>
+        <item>Turmeric</item>
     </string-array>
 
     <string-array name="cropRotation">
@@ -50,7 +50,7 @@
         <item>Wheat</item>
         <item>Sugarcane</item>
         <item>Cotton</item>
-        <item>Others</item>
+        <item>Turmeric</item>
     </string-array>
 
     <string-array name="soilTexture">
