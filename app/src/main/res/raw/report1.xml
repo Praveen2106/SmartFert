@@ -4,7 +4,7 @@
         <FarmerID>F100</FarmerID>
         <FarmerName>Vishnu Kumar</FarmerName>
         <Photo></Photo>
-        <Sex>Male</Sex>
+        <Sex>M</Sex>
         <FatherName>Srinivasan</FatherName>
         <Address>2-20E, North street, Villampatty post, Kottathupatty, Salem-63139</Address>
         <MobileNumber>+919884761140</MobileNumber>
@@ -32,7 +32,7 @@
         <SoilLabNumber>Lab1034</SoilLabNumber>
         <FarmerName>Vishnu Kumar</FarmerName>
         <IrrigationType>Well</IrrigationType>
-        <CurrentCrop>Wheat</CurrentCrop>
+        <CurrentCrop>Paddy</CurrentCrop>
         <ClimaticZone>Southern Plateau</ClimaticZone>
         <CropRotation>Turmeric</CropRotation>
         <SampleDate>07-03-2015</SampleDate>

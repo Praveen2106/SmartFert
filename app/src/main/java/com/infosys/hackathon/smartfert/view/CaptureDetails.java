@@ -1,6 +1,8 @@
 package com.infosys.hackathon.smartfert.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.infosys.hackathon.smartfert.R;
@@ -37,6 +42,9 @@ public class CaptureDetails extends ActionBarActivity {
     public static SoilData soilData;
     public static SoilFertilityData soilFertilityData;
 
+
+    public static boolean fetchOrAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,39 +52,83 @@ public class CaptureDetails extends ActionBarActivity {
             return;
 
         setContentView(R.layout.form_capture_details);
-        Fragment basicDetails = new BasicDetails();
+        final Fragment basicDetails = new BasicDetails();
 
         farmerData = new FarmerData();
         soilData = new SoilData();
         landData = new LandData();
         soilFertilityData = new SoilFertilityData();
 
-        try {
-            InputStream ins = getResources().openRawResource(
-                    getResources().getIdentifier("raw/report1",
-                            "raw", getPackageName()));
+        final AlertDialog dialog;
+        Button addNew, fetchDetails;
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_farmer_id, null);
+        dialog = new AlertDialog.Builder(this)
+                .setView(dialogView)
+                .create();
 
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser saxParser = factory.newSAXParser();
-            DataParser parser = new DataParser();
-            saxParser.parse(ins, parser);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-            SoilFertilityData fData = parser.getFertilityDetails();
-            Toast.makeText(getApplicationContext(), fData.getFarmerDetails().getFarmerName(), Toast.LENGTH_LONG).show();
-            System.out.println("----"+fData.getSoilDetails().getClimaticZone());
+        final EditText soilTestRptNo = (EditText) dialogView.findViewById(R.id.soilTestRptNo);
+        addNew = (Button) dialogView.findViewById(R.id.addNewSoilReport);
+        fetchDetails = (Button) dialogView.findViewById(R.id.fetchDetails);
 
-            parser.parseXMLToFile(fData.getSoilDetails().getSoilReportNumber(), "Something", getApplicationContext());
-            HeaderUtil.getFileData(fData.getSoilDetails().getSoilReportNumber(), getApplicationContext());
+        addNew.setOnClickListener(new View.OnClickListener() {
 
-            farmerData = fData.getFarmerDetails();
-            landData = fData.getLandDetails();
-            soilData = fData.getSoilDetails();
+            @Override
+            public void onClick(View v) {
+                soilData.setSoilReportNumber(soilTestRptNo.getText().toString());
+                fm = getSupportFragmentManager();
+                fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
+                fetchOrAdd = true;
+                dialog.dismiss();
+            }
+        });
 
-            fm = getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        fetchDetails.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                try {
+                    InputStream ins = getResources().openRawResource(
+                            getResources().getIdentifier("raw/report1",
+                                    "raw", getPackageName()));
+
+                    SAXParserFactory factory = SAXParserFactory.newInstance();
+                    SAXParser saxParser = factory.newSAXParser();
+                    DataParser parser = new DataParser();
+                    saxParser.parse(ins, parser);
+
+                    SoilFertilityData fData = parser.getFertilityDetails();
+                    //Toast.makeText(getApplicationContext(), fData.getFarmerDetails().getFarmerName(), Toast.LENGTH_LONG).show();
+                    System.out.println("----" + fData.getSoilDetails().getClimaticZone());
+
+                    parser.parseXMLToFile(fData.getSoilDetails().getSoilReportNumber(), "Something", getApplicationContext());
+                    HeaderUtil.getFileData(fData.getSoilDetails().getSoilReportNumber(), getApplicationContext());
+
+                    farmerData = fData.getFarmerDetails();
+                    landData = fData.getLandDetails();
+                    soilData = fData.getSoilDetails();
+
+                    fm = getSupportFragmentManager();
+                    fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
+                    fetchOrAdd = true;
+                    dialog.dismiss();
+                } catch (Exception e) { e.printStackTrace(); }
+            }
+        });
+
+        fetchOrAdd = false;
+        dialog.show();
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                if(fetchOrAdd)
+                    return;
+
+                finish();
+            }
+        });
 
         findViewById(R.id.bankDetails).setOnClickListener(new View.OnClickListener() {
             @Override

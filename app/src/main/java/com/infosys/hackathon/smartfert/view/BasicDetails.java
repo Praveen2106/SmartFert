@@ -53,7 +53,7 @@ public class BasicDetails extends Fragment {
 
     @Override
     public void onStart() {
-        //farmerId.setText(CaptureDetails.farmerData.getFarmerId());
+        farmerId.setText(CaptureDetails.farmerData.getFarmerId());
         farmerName.setText(CaptureDetails.farmerData.getFarmerName());
         fatherName.setText(CaptureDetails.farmerData.getFatherName());
         address.setText(CaptureDetails.farmerData.getAddress());
