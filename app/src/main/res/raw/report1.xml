@@ -26,6 +26,8 @@
         <Village>Villampatty</Village>
         <CurrentCrop>Paddy</CurrentCrop>
         <PreviousCrop>Turmeric</PreviousCrop>
+        <CropSownDate>02-03-2015</CropSownDate>
+        <CropHarvestDate>14-03-2015</CropHarvestDate>
     </LandData>
     <SoilData>
         <SoilReportNumber>SR1001</SoilReportNumber>

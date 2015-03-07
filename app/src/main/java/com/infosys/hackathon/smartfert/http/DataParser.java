@@ -71,6 +71,10 @@ public class DataParser extends DefaultHandler {
 
     private boolean village;
 
+    private boolean cropSowndate;
+
+    private boolean cropHarvestDate;
+
 
     private boolean cropDate;
 
@@ -182,6 +186,10 @@ public class DataParser extends DefaultHandler {
             currentCrop = true;
         } else if (qName.equalsIgnoreCase("PreviousCrop")) {
             previousCrop = true;
+        } else if (qName.equalsIgnoreCase("CropSownDate")) {
+            cropSowndate = true;
+        } else if (qName.equalsIgnoreCase("CropHarvestDate")) {
+            cropHarvestDate = true;
         } else if (qName.equalsIgnoreCase("SoilReportNumber")) {
             soilReportNumber = true;
         } else if (qName.equalsIgnoreCase("SoilLabNumber")) {
@@ -324,6 +332,12 @@ public class DataParser extends DefaultHandler {
         } else if (previousCrop) {
             landDetails.setPreviousCrop(new String(ch, start, length));
             previousCrop = false;
+        } else if (cropSowndate) {
+            landDetails.setCropDate(new String(ch, start, length));
+            cropSowndate = false;
+        } else if (cropHarvestDate) {
+            landDetails.setHarvestDate(new String(ch, start, length));
+            cropHarvestDate = false;
         } else if (soilReportNumber) {
             soilDetails.setSoilReportNumber(new String(ch, start, length));
             soilReportNumber = false;

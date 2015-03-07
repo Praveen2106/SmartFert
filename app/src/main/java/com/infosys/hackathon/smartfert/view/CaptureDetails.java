@@ -43,7 +43,6 @@ public class CaptureDetails extends ActionBarActivity {
     public static SoilData soilData;
     public static SoilFertilityData soilFertilityData;
 
-
     public static int tabNumber = -1;
     public static boolean fetchOrAdd;
 
@@ -81,7 +80,11 @@ public class CaptureDetails extends ActionBarActivity {
                 soilData.setSoilReportNumber(soilTestRptNo.getText().toString());
                 fm = getSupportFragmentManager();
                 tabNumber = 1;
-                fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
+                findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_1));
+                findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                fm.beginTransaction().replace(R.id.frame_container, basicDetails, "1").commit();
                 fetchOrAdd = true;
                 dialog.dismiss();
             }
@@ -109,7 +112,11 @@ public class CaptureDetails extends ActionBarActivity {
 
                     fm = getSupportFragmentManager();
                     tabNumber = 1;
-                    fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
+                    findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_1));
+                    findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                    findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                    findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                    fm.beginTransaction().replace(R.id.frame_container, basicDetails, "1").commit();
                     fetchOrAdd = true;
                     dialog.dismiss();
                 } catch (Exception e) {
@@ -217,6 +224,7 @@ public class CaptureDetails extends ActionBarActivity {
             soilFertilityData.setSoilDetails(CaptureDetails.soilData);
 
             HeaderUtil.toXML(soilFertilityData, getApplicationContext());
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

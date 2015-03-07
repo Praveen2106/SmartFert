@@ -80,9 +80,13 @@ public class HeaderUtil {
                 sb.append(getXMLNode("LandArea", landData.getLandArea()+""));
                 sb.append(getXMLNode("District", landData.getDistrict()));
                 sb.append(getXMLNode("Zonal", landData.getZonal()));
+                sb.append(getXMLNode("District", landData.getDistrict()));
+                sb.append(getXMLNode("Zonal", landData.getZonal()));
                 sb.append(getXMLNode("Village", landData.getVillage()));
                 sb.append(getXMLNode("CurrentCrop", landData.getCurrentCrop()));
                 sb.append(getXMLNode("PreviousCrop", landData.getPreviousCrop()));
+                sb.append(getXMLNode("CropSownDate", landData.getCropDate()));
+                sb.append(getXMLNode("CropHarvestDate", landData.getHarvestDate()));
                 sb.append("</LandData>");
             }
             sb.append("</SmartFert>");

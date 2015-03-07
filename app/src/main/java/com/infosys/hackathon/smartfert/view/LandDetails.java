@@ -1,6 +1,7 @@
 package com.infosys.hackathon.smartfert.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -148,7 +149,7 @@ public class LandDetails extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.cropSownDate:
-                DatePickerDialog sownDateBuilder = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog sownDateBuilder = new DatePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         sownMonth = monthOfYear;
@@ -168,7 +169,7 @@ public class LandDetails extends Fragment implements View.OnClickListener{
                 break;
 
             case R.id.cropHarvestDate:
-                DatePickerDialog harvestDateBuilder = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog harvestDateBuilder = new DatePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         harvestMonth = monthOfYear;

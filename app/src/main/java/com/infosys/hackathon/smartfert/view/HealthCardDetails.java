@@ -24,7 +24,6 @@ import java.util.Date;
  * File Created by Praveen K on 07-Mar-15.
  */
 public class HealthCardDetails extends Fragment implements  View.OnClickListener{
-
     Button soilSampleDate, soilAnalysisSentDate;
     Spinner soilTexture, calciumContent, saltContent, phContent;
     TextView bOC, bPC, bNC, bKC;
@@ -32,8 +31,6 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
 
     int day1, month1, year1;
     int day2, month2, year2;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,7 +61,6 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         populateInitialValues();
         return rootView;
     }
-
 
     public void populateInitialValues() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -186,6 +182,11 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         CaptureDetails.soilData.setBlanketOrganicContent(Float.valueOf(bOC.getText().toString()));
         CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(bKC.getText().toString()));
         CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(bPC.getText().toString()));
+
+        CaptureDetails.soilData.setBlanketNitrogenContent(Float.valueOf(150));
+        CaptureDetails.soilData.setBlanketOrganicContent(Float.valueOf(0));
+        CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(50));
+        CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(50));
     }
 
     @Override

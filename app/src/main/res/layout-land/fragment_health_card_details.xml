@@ -342,7 +342,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Potassium (P)"
+                    android:text="Phosphate (P)"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:textStyle="bold"
@@ -376,7 +376,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     style="@style/TableLabel"
-                    android:text="Phosphate (K)"
+                    android:text="Potassium (K)"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:textStyle="bold"
