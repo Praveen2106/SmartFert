@@ -27,16 +27,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/indian_farmer_ploughing"
+                android:src="@drawable/soil_fert_capture"
             />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dimen_title"
+                android:textSize="@dimen/dimen_label"
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:text="@string/dummy"/>
+                android:text="Soil Fertility Capture"/>
         </LinearLayout>
 
 
@@ -52,16 +52,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/indian_farmer_ploughing"
+                android:src="@drawable/fert_manage"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dimen_title"
+                android:textSize="@dimen/dimen_label"
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:text="@string/dummy"/>
+                android:text="Fertilizer Subsidy Management"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -85,16 +85,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/indian_farmer_ploughing"
+                android:src="@drawable/crop_insurance"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dimen_title"
+                android:textSize="@dimen/dimen_label"
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:text="@string/dummy"/>
+                android:text="Crop Insurance"/>
         </LinearLayout>
 
 
@@ -110,16 +110,16 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:src="@drawable/indian_farmer_ploughing"
+                android:src="@drawable/report_generation"
                 />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dimen_title"
+                android:textSize="@dimen/dimen_label"
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:gravity="center"
                 android:textColor="@android:color/black"
-                android:text="@string/dummy"/>
+                android:text="Report Generation"/>
         </LinearLayout>
 
     </LinearLayout>

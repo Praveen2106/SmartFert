@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:id="@+id/password"
+                android:inputType="textPassword"
                 android:textSize="@dimen/dimen_label"
                 android:textColor="@android:color/black"
                 />
