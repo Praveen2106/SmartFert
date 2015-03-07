@@ -13,4 +13,66 @@
     <string name="login_password">Password</string>
 
     <string name="dummy">Dummy Text</string>
+
+
+    <string-array name="ownership">
+        <item>Own</item>
+        <item>Leased</item>
+        <item>Rented</item>
+    </string-array>
+
+
+    <string-array name="irrigationType">
+        <item>River</item>
+        <item>Well</item>
+        <item>Borewell</item>
+        <item>Canal</item>
+    </string-array>
+
+    <string-array name="climaticZone">
+        <item>Southern Plateau</item>
+        <item>Western Hill Regions</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="currentCrop">
+        <item>Paddy</item>
+        <item>Wheat</item>
+        <item>Sugarcane</item>
+        <item>Cotton</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="cropRotation">
+        <item></item>
+        <item>Paddy</item>
+        <item>Wheat</item>
+        <item>Sugarcane</item>
+        <item>Cotton</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="soilTexture">
+        <item>Sandy</item>
+        <item>Loam</item>
+        <item>Alluvial</item>
+        <item>Clay</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="calciumCarbonate">
+        <item>Nil</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+
+    <string-array name="saltContent">
+        <item></item>
+        <item>Good</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
 </resources>

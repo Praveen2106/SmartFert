@@ -13,15 +13,15 @@ import com.infosys.hackathon.smartfert.R;
 /**
  * File Created by Praveen K on 07-Mar-15.
  */
-public class BasicDetails extends Fragment {
-
+public class SoilDetails extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView;
 
         LayoutInflater layoutInflater = (LayoutInflater) getActivity().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        rootView = layoutInflater.inflate(R.layout.fragment_basic_details, null);
+        rootView = layoutInflater.inflate(R.layout.fragment_soil_details, null);
         return rootView;
     }
+
 }

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Sample Date"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="0dp"
+                android:id="@+id/soilSampleDate"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Texture"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:id="@+id/soilTexture"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:entries="@array/soilTexture"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calcium Carbonate Content"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:id="@+id/calciumCarbonate"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:entries="@array/calciumCarbonate"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salt Content EC(dSm-1)"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:id="@+id/saltContent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:entries="@array/saltContent"
+                android:layout_weight="6"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="pH Content"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:id="@+id/phContent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:entries="@array/calciumCarbonate"
+                android:layout_weight="6"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4">
+                <TextView
+                    style="@style/CaptureLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soil Analysis Report Date"
+                    />
+
+                <TextView
+                    style="@style/CaptureMandatory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="0dp"
+                android:id="@+id/soilAnalysisRptDate"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_weight="6"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
