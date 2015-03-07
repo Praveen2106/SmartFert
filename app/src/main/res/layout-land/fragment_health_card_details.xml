@@ -226,5 +226,180 @@
                 android:gravity="center_vertical"
                 android:layout_weight="6"/>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen_label"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
+            android:text="Soil Analysis Report"/>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Macro Nutrients (Kilo/Acre)"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Blanket Value"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Actual Value"
+                    android:layout_width="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+            </TableRow>
+
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Organic Content (O.C%)"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:id="@+id/bOC"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    style="@style/TableLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/avlOC"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Nitrogen (N)"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bNC"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    style="@style/TableLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/avlNC"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </TableRow>
+
+
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Potassium (P)"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bPC"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    style="@style/TableLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/avlPC"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </TableRow>
+
+
+            <TableRow android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/TableLabel"
+                    android:text="Phosphate (K)"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    style="@style/TableLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/bKC"
+                    android:layout_height="wrap_content"
+                    />
+
+                <LinearLayout
+                    style="@style/TableLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/avlKC"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </ScrollView>

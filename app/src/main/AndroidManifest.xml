@@ -28,7 +28,7 @@
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" ></activity>
 
-        <activity android:name=".view.SoilFertilizerManagement"
+        <activity android:name=".view.FertliserMgmtDashActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" ></activity>
     </application>

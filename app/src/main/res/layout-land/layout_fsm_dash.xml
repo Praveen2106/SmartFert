@@ -3,7 +3,8 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/LinearLayout1"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#ffffff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,17 +12,21 @@
         android:id="@+id/LinearLayout2"
         android:orientation="horizontal"
         android:layout_weight="0.5"
-        android:weightSum="1">
+        android:weightSum="1"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/layout_avbl_fertility"
             android:orientation="horizontal"
-            android:layout_weight="0.5"
-            android:background="#efefef">
+            android:layout_weight="0.5">
 
         </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#000000"></View>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,9 +34,16 @@
             android:orientation="horizontal"
             android:layout_weight="0.5">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/paddy"/>
         </LinearLayout>
         </LinearLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#000000"></View>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -46,14 +58,21 @@
             android:orientation="horizontal"
             android:layout_weight="0.5">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/priceindex"/>
         </LinearLayout>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="#000000"></View>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/layout_subsidyhistory"
             android:orientation="horizontal"
-            android:layout_weight="0.5"
-            android:background="#efefef">
+            android:layout_weight="0.5">
 
         </LinearLayout>
     </LinearLayout>

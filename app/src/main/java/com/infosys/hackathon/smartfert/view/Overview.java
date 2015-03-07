@@ -27,6 +27,13 @@ public class Overview extends ActionBarActivity {
                 startActivity(new Intent(Overview.this, CaptureDetails.class));
             }
         });
+
+        findViewById(R.id.manageFertility).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Overview.this, FertliserMgmtDashActivity.class));
+            }
+        });
     }
 
 
@@ -39,17 +46,6 @@ public class Overview extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }

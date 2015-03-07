@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.infosys.hackathon.smartfert.R;
 
@@ -25,9 +27,13 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
 
     Button soilSampleDate, soilAnalysisSentDate;
     Spinner soilTexture, calciumContent, saltContent, phContent;
+    TextView bOC, bPC, bNC, bKC;
+    EditText avlOC, avlPC, avlNC, avlKC;
 
     int day1, month1, year1;
     int day2, month2, year2;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,6 +48,16 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         calciumContent = (Spinner) rootView.findViewById(R.id.calciumCarbonate);
         saltContent = (Spinner) rootView.findViewById(R.id.saltContent);
         phContent = (Spinner) rootView.findViewById(R.id.phContent);
+
+        avlOC = (EditText) rootView.findViewById(R.id.avlOC);
+        avlKC = (EditText) rootView.findViewById(R.id.avlKC);
+        avlPC = (EditText) rootView.findViewById(R.id.avlPC);
+        avlNC = (EditText) rootView.findViewById(R.id.avlNC);
+
+        bOC = (TextView) rootView.findViewById(R.id.bOC);
+        bNC = (TextView) rootView.findViewById(R.id.bNC);
+        bPC = (TextView) rootView.findViewById(R.id.bPC);
+        bKC = (TextView) rootView.findViewById(R.id.bKC);
 
         populateInitialValues();
         return rootView;
@@ -66,6 +82,15 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         String[] calciumContentArray = getResources().getStringArray(R.array.calciumCarbonate);
         String[] saltContentArray = getResources().getStringArray(R.array.saltContent);
         String[] phContentArray = getResources().getStringArray(R.array.calciumCarbonate);
+
+        avlOC.setText(String.valueOf(CaptureDetails.soilData.getAvailableOrganicContent()));
+        avlKC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePhosphateContent()));
+        avlPC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePotassiumContent()));
+        avlNC.setText(String.valueOf(CaptureDetails.soilData.getAvailableNitrogenContent()));
+        bOC.setText(String.valueOf(CaptureDetails.soilData.getBlanketOrganicContent()));
+        bKC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPhosphateContent()));
+        bPC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPotassiumContent()));
+        bNC.setText(String.valueOf(CaptureDetails.soilData.getBlanketNitrogenContent()));
 
         try {
             for(int i = 0; i<textureArray.length;i++) {
@@ -133,6 +158,11 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
 
     @Override
     public void onStop() {
+        saveDetails();
+        super.onStop();
+    }
+
+    public void saveDetails() {
         String[] textureArray = getResources().getStringArray(R.array.soilTexture);
         String[] calciumContentArray = getResources().getStringArray(R.array.calciumCarbonate);
         String[] saltContentArray = getResources().getStringArray(R.array.saltContent);
@@ -145,7 +175,15 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         CaptureDetails.soilData.setSaltContent(saltContentArray[saltContent.getSelectedItemPosition()]);
         CaptureDetails.soilData.setpHContent(phContentArray[phContent.getSelectedItemPosition()]);
 
-        super.onStop();
+        CaptureDetails.soilData.setAvailableNitrogenContent(Float.valueOf(avlNC.getText().toString()));
+        CaptureDetails.soilData.setAvailableOrganicContent(Float.valueOf(avlOC.getText().toString()));
+        CaptureDetails.soilData.setAvailablePhosphateContent(Float.valueOf(avlKC.getText().toString()));
+        CaptureDetails.soilData.setAvailablePotassiumContent(Float.valueOf(avlPC.getText().toString()));
+
+        CaptureDetails.soilData.setBlanketNitrogenContent(Float.valueOf(bNC.getText().toString()));
+        CaptureDetails.soilData.setBlanketOrganicContent(Float.valueOf(bOC.getText().toString()));
+        CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(bKC.getText().toString()));
+        CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(bPC.getText().toString()));
     }
 
     @Override

@@ -43,32 +43,28 @@
             android:layout_weight="6"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="right|end"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD SOIL TEST REPORT"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:id="@+id/addNewSoilReport"
-            android:background="@android:color/transparent"/>
+        android:text="ADD SOIL TEST REPORT"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_gravity="right|end"
+        android:id="@+id/addNewSoilReport"
+        android:background="@android:color/transparent"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FETCH SOIL TEST REPORT"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_gravity="right|end"
+        android:textColor="#4CAF50"
+        android:textStyle="bold"
+        android:id="@+id/fetchDetails"
+        android:background="@android:color/transparent"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FETCH SOIL TEST REPORT"
-            android:textSize="14sp"
-            android:layout_marginLeft="16dp"
-            android:textColor="#4CAF50"
-            android:textStyle="bold"
-            android:id="@+id/fetchDetails"
-            android:background="@android:color/transparent"/>
-    </LinearLayout>
 </LinearLayout>

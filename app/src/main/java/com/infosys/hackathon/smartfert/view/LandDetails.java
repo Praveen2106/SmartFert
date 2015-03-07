@@ -105,6 +105,11 @@ public class LandDetails extends Fragment implements View.OnClickListener{
 
     @Override
     public void onStop() {
+        saveDetails();
+        super.onStop();
+    }
+
+    public void saveDetails() {
         CaptureDetails.landData.setSurveyName(surveyNo.getText().toString());
         CaptureDetails.landData.setLandArea(Float.parseFloat(landArea.getText().toString()));
         CaptureDetails.landData.setDistrict(district.getText().toString());
@@ -126,8 +131,6 @@ public class LandDetails extends Fragment implements View.OnClickListener{
                 CaptureDetails.landData.setOwnership("Rented");
                 break;
         }
-
-        super.onStop();
     }
 
     public void populateInitialValues() {

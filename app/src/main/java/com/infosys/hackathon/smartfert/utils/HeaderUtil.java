@@ -2,6 +2,7 @@ package com.infosys.hackathon.smartfert.utils;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.infosys.hackathon.smartfert.data.FarmerData;
 import com.infosys.hackathon.smartfert.data.LandData;
@@ -45,35 +46,35 @@ public class HeaderUtil {
                 sb.append(getXMLNode("Relationship", farmerData.getAccountRelationship()));
                 sb.append("</FarmerData>");
             }
-            SoilData soilData = new SoilData();
+            SoilData soilData = soilFertilityData.getSoilDetails();
             if (soilData != null) {
                 sb.append("<SoilData>");
                 sb.append(getXMLNode("SoilReportNumber", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("SoilLabNumber", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("FarmerName", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("IrrigationType", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("CurrentCrop", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("ClimaticZone", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("CropRotation", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("SampleDate", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("SoilTexture", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("CCcontent", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("SaltContent", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("PHContent", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("ReportSentDate", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("AvblOC", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("BlanketOC", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("BlanketNitrogen", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("AvblNitrogen", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("AvblPotassium", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("BlanketPotassium", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("AvblPhosphate", soilData.getSoilReportNumber()));
-                sb.append(getXMLNode("BlanketPhosphate", soilData.getSoilReportNumber()));
+                sb.append(getXMLNode("SoilLabNumber", soilData.getSoilLabNumber()));
+                sb.append(getXMLNode("FarmerName", soilData.getFarmerName()));
+                sb.append(getXMLNode("IrrigationType", soilData.getIrrigationType()));
+                sb.append(getXMLNode("CurrentCrop", soilData.getCurrentCrop()));
+                sb.append(getXMLNode("ClimaticZone", soilData.getClimaticZone()));
+                sb.append(getXMLNode("CropRotation", soilData.getCurrentCrop()));
+                sb.append(getXMLNode("SampleDate", soilData.getSoilSampleDate()));
+                sb.append(getXMLNode("SoilTexture", soilData.getSoilTexture()));
+                sb.append(getXMLNode("CCcontent", soilData.getCalciumCarbonateContent()));
+                sb.append(getXMLNode("SaltContent", soilData.getSaltContent()));
+                sb.append(getXMLNode("PHContent", soilData.getpHContent()));
+                sb.append(getXMLNode("ReportSentDate", soilData.getSoilReportSentDate()));
+                sb.append(getXMLNode("AvblOC", String.valueOf(soilData.getAvailableOrganicContent())));
+                sb.append(getXMLNode("BlanketOC", String.valueOf(soilData.getBlanketOrganicContent())));
+                sb.append(getXMLNode("BlanketNitrogen", String.valueOf(soilData.getBlanketNitrogenContent())));
+                sb.append(getXMLNode("AvblNitrogen", String.valueOf(soilData.getAvailableNitrogenContent())));
+                sb.append(getXMLNode("AvblPotassium", String.valueOf(soilData.getAvailablePotassiumContent())));
+                sb.append(getXMLNode("BlanketPotassium", String.valueOf(soilData.getBlanketPotassiumContent())));
+                sb.append(getXMLNode("AvblPhosphate", String.valueOf(soilData.getAvailablePhosphateContent())));
+                sb.append(getXMLNode("BlanketPhosphate", String.valueOf(soilData.getBlanketPhosphateContent())));
                 sb.append("</SoilData>");
             }
-            LandData landData = new LandData();
+            LandData landData = soilFertilityData.getLandDetails();
             if (landData != null) {
-                sb.append("<LandData");
+                sb.append("<LandData>");
                 sb.append(getXMLNode("SurveyName", landData.getSurveyName()));
                 sb.append(getXMLNode("Ownership", landData.getOwnership()));
                 sb.append(getXMLNode("LandArea", landData.getLandArea()+""));
@@ -89,14 +90,16 @@ public class HeaderUtil {
             FileOutputStream outputStream;
 
             try {
-                outputStream = appContext.openFileOutput(soilData.getSoilReportNumber(), Context.MODE_PRIVATE);
+                outputStream = appContext.openFileOutput(soilData.getSoilReportNumber().toLowerCase(), Context.MODE_PRIVATE);
                 outputStream.write(sb.toString().getBytes());
                 outputStream.close();
+                Toast.makeText(appContext, "File Saved", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
+                Toast.makeText(appContext, "File Not Saved1", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
-
         } catch (Exception e) {
+            Toast.makeText(appContext, "File Saved2", Toast.LENGTH_SHORT).show();
             Log.e("HeaderUtil", e.toString());
         }
 

@@ -26,6 +26,7 @@ import com.infosys.hackathon.smartfert.data.SoilFertilityData;
 import com.infosys.hackathon.smartfert.http.DataParser;
 import com.infosys.hackathon.smartfert.utils.HeaderUtil;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import javax.xml.parsers.SAXParser;
@@ -43,6 +44,7 @@ public class CaptureDetails extends ActionBarActivity {
     public static SoilFertilityData soilFertilityData;
 
 
+    public static int tabNumber = -1;
     public static boolean fetchOrAdd;
 
     @Override
@@ -78,6 +80,7 @@ public class CaptureDetails extends ActionBarActivity {
             public void onClick(View v) {
                 soilData.setSoilReportNumber(soilTestRptNo.getText().toString());
                 fm = getSupportFragmentManager();
+                tabNumber = 1;
                 fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
                 fetchOrAdd = true;
                 dialog.dismiss();
@@ -89,9 +92,9 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    InputStream ins = getResources().openRawResource(
-                            getResources().getIdentifier("raw/report1",
-                                    "raw", getPackageName()));
+                    soilData.setSoilReportNumber(soilTestRptNo.getText().toString());
+                    InputStream ins = new ByteArrayInputStream(HeaderUtil.getFileData(soilData.getSoilReportNumber().toLowerCase(), getApplicationContext()).getBytes());
+                    //InputStream ins = getResources().openRawResource(getResources().getIdentifier("raw/report1","raw", getPackageName()));
 
                     SAXParserFactory factory = SAXParserFactory.newInstance();
                     SAXParser saxParser = factory.newSAXParser();
@@ -99,21 +102,19 @@ public class CaptureDetails extends ActionBarActivity {
                     saxParser.parse(ins, parser);
 
                     SoilFertilityData fData = parser.getFertilityDetails();
-                    //Toast.makeText(getApplicationContext(), fData.getFarmerDetails().getFarmerName(), Toast.LENGTH_LONG).show();
-                    System.out.println("----" + fData.getSoilDetails().getClimaticZone());
-
-                    parser.parseXMLToFile(fData.getSoilDetails().getSoilReportNumber(), "Something", getApplicationContext());
-                    HeaderUtil.getFileData(fData.getSoilDetails().getSoilReportNumber(), getApplicationContext());
-
-                    farmerData = fData.getFarmerDetails();
-                    landData = fData.getLandDetails();
-                    soilData = fData.getSoilDetails();
+                    //parser.parseXMLToFile(fData.getSoilDetails().getSoilReportNumber(), "Something", getApplicationContext());
+                    CaptureDetails.farmerData = fData.getFarmerDetails();
+                    CaptureDetails.landData = fData.getLandDetails();
+                    CaptureDetails.soilData = fData.getSoilDetails();
 
                     fm = getSupportFragmentManager();
+                    tabNumber = 1;
                     fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
                     fetchOrAdd = true;
                     dialog.dismiss();
-                } catch (Exception e) { e.printStackTrace(); }
+                } catch (Exception e) {
+                    Toast.makeText(CaptureDetails.this, "Soil Test Report Number is invalid", Toast.LENGTH_LONG).show();
+                    e.printStackTrace(); }
             }
         });
 
@@ -134,7 +135,8 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Fragment basicDetails = new BasicDetails();
-                fm.beginTransaction().replace(R.id.frame_container, basicDetails).commit();
+                tabNumber = 1;
+                fm.beginTransaction().replace(R.id.frame_container, basicDetails, "1").commit();
             }
         });
 
@@ -143,7 +145,8 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Fragment landDetails = new LandDetails();
-                fm.beginTransaction().replace(R.id.frame_container, landDetails).commit();
+                tabNumber = 2;
+                fm.beginTransaction().replace(R.id.frame_container, landDetails, "2").commit();
             }
         });
 
@@ -152,7 +155,8 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Fragment soilDetails = new SoilDetails();
-                fm.beginTransaction().replace(R.id.frame_container, soilDetails).commit();
+                tabNumber = 3;
+                fm.beginTransaction().replace(R.id.frame_container, soilDetails, "3").commit();
             }
         });
 
@@ -160,7 +164,8 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Fragment healthCardDetails = new HealthCardDetails();
-                fm.beginTransaction().replace(R.id.frame_container, healthCardDetails).commit();
+                tabNumber = 4;
+                fm.beginTransaction().replace(R.id.frame_container, healthCardDetails, "4").commit();
             }
         });
     }
@@ -176,9 +181,25 @@ public class CaptureDetails extends ActionBarActivity {
         if(item.getItemId() == R.id.action_save) {
             SoilFertilityData soilFertilityData = new SoilFertilityData();
 
-            soilFertilityData.setFarmerDetails(farmerData);
-            soilFertilityData.setLandDetails(landData);
-            soilFertilityData.setSoilDetails(soilData);
+            if (tabNumber == 1) {
+                BasicDetails fragment = (BasicDetails) getSupportFragmentManager().findFragmentByTag("1");
+                fragment.saveDetails();
+            } else if (tabNumber == 2) {
+                LandDetails fragment = (LandDetails) getSupportFragmentManager().findFragmentByTag("2");
+                fragment.saveDetails();
+            }else if(tabNumber == 3) {
+                SoilDetails fragment = (SoilDetails) getSupportFragmentManager().findFragmentByTag("3");
+                fragment.saveDetails();
+            } else {
+                HealthCardDetails fragment = (HealthCardDetails) getSupportFragmentManager().findFragmentByTag("4");
+                fragment.saveDetails();
+            }
+
+            soilFertilityData.setFarmerDetails(CaptureDetails.farmerData);
+            soilFertilityData.setLandDetails(CaptureDetails.landData);
+            soilFertilityData.setSoilDetails(CaptureDetails.soilData);
+
+            HeaderUtil.toXML(soilFertilityData, getApplicationContext());
         }
 
         return super.onOptionsItemSelected(item);

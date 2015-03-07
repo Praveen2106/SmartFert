@@ -81,6 +81,11 @@ public class BasicDetails extends Fragment {
 
     @Override
     public void onStop() {
+        saveDetails();
+        super.onStop();
+    }
+
+    public void saveDetails() {
         CaptureDetails.farmerData.setFarmerName(farmerName.getText().toString());
         CaptureDetails.farmerData.setFatherName(fatherName.getText().toString());
         CaptureDetails.farmerData.setAddress(address.getText().toString());
@@ -98,6 +103,5 @@ public class BasicDetails extends Fragment {
         else
             CaptureDetails.farmerData.setSex("F");
 
-        super.onStop();
     }
 }

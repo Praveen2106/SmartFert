@@ -10,6 +10,22 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="TableLabel">
+        <item name="android:background">@drawable/bg_table</item>
+        <item name="android:padding">11dp</item>
+        <item name="android:textSize">@dimen/dimen_label</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TableLabel1">
+        <item name="android:background">@drawable/bg_table</item>
+        <item name="android:textSize">@dimen/dimen_label</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+
+
     <style name="CaptureMandatory">
         <item name="android:textSize">@dimen/dimen_label</item>
         <item name="android:text">*</item>

@@ -92,8 +92,7 @@ public class SoilDetails extends Fragment {
         super.onStart();
     }
 
-    @Override
-    public void onStop() {
+    public void saveDetails() {
         String[] irrigationArray = getResources().getStringArray(R.array.irrigationType);
         String[] currentCropArray = getResources().getStringArray(R.array.currentCrop);
         String[] climateArray = getResources().getStringArray(R.array.climaticZone);
@@ -105,6 +104,11 @@ public class SoilDetails extends Fragment {
         CaptureDetails.soilData.setCurrentCrop(currentCropArray[currentCrop.getSelectedItemPosition()]);
         CaptureDetails.soilData.setClimaticZone(climateArray[climaticZone.getSelectedItemPosition()]);
         CaptureDetails.soilData.setCropRotation(cropRotationArray[cropRotation.getSelectedItemPosition()]);
+    }
+
+    @Override
+    public void onStop() {
+        saveDetails();
         super.onStop();
     }
 }
