@@ -59,6 +59,8 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         bPC = (TextView) rootView.findViewById(R.id.bPC);
         bKC = (TextView) rootView.findViewById(R.id.bKC);
 
+        soilSampleDate.setOnClickListener(this);
+        soilAnalysisSentDate.setOnClickListener(this);
         populateInitialValues();
         return rootView;
     }

@@ -298,6 +298,7 @@
                     <EditText
                         android:id="@+id/avlOC"
                         android:layout_width="100dp"
+                        android:inputType="numberDecimal"
                         android:layout_height="wrap_content"
                         />
                 </LinearLayout>
@@ -329,6 +330,7 @@
 
                     <EditText
                         android:id="@+id/avlNC"
+                        android:inputType="numberDecimal"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         />
@@ -362,6 +364,7 @@
 
                     <EditText
                         android:id="@+id/avlPC"
+                        android:inputType="numberDecimal"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         />
@@ -396,6 +399,7 @@
                     <EditText
                         android:id="@+id/avlKC"
                         android:layout_width="100dp"
+                        android:inputType="numberDecimal"
                         android:layout_height="wrap_content"
                         />
                 </LinearLayout>
