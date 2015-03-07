@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<SmartFert>
+    <FarmerData>
+        <FarmerID>F100</FarmerID>
+        <FarmerName>Vishnu Kumar</FarmerName>
+        <Photo></Photo>
+        <Sex>Male</Sex>
+        <FatherName>Srinivasan</FatherName>
+        <Address>2-20E, North street, Villampatty post, Kottathupatty, Salem-63139</Address>
+        <MobileNumber>+919884761140</MobileNumber>
+        <Email>vishu_s@gmail.com</Email>
+        <KissanNumber>4375 2134 5443 1234</KissanNumber>
+        <AadharNumber>AIN1001</AadharNumber>
+        <BankName>Bank Of India</BankName>
+        <BankBranch>Kottathupatty</BankBranch>
+        <AccountNumber>175638991234</AccountNumber>
+        <HolderName>Vishnu Kumar</HolderName>
+        <Relationship></Relationship>
+    </FarmerData>
+    <LandData>
+        <SurveyName>TN-ST-2345</SurveyName>
+        <Ownership>Owned</Ownership>
+        <LandArea>4</LandArea>
+        <District>Salem</District>
+        <Zonal>Valapadi</Zonal>
+        <Village>Villampatty</Village>
+        <CurrentCrop>Paddy</CurrentCrop>
+        <PreviousCrop>Turmeric</PreviousCrop>
+    </LandData>
+    <SoilData>
+        <SoilReportNumber>SR1001</SoilReportNumber>
+        <SoilLabNumber>Lab1034</SoilLabNumber>
+        <FarmerName>Vishnu Kumar</FarmerName>
+        <IrrigationType>Well</IrrigationType>
+        <CurrentCrop>Paddy</CurrentCrop>
+        <ClimaticZone>Southern Plateau</ClimaticZone>
+        <CropRotation>Turmeric</CropRotation>
+        <SampleDate>07-03-2015</SampleDate>
+        <SoilTexture>Sandy</SoilTexture>
+        <CCcontent>NA</CCcontent>
+        <SaltContent>NA</SaltContent>
+        <PHContent>NA</PHContent>
+        <ReportSentDate>NA</ReportSentDate>
+        <AvblOC>NA</AvblOC>
+        <BlanketOC>NA</BlanketOC>
+        <AvblNitrogen>50</AvblNitrogen>
+        <BlanketNitrogen>150</BlanketNitrogen>
+        <AvblPotassium>25</AvblPotassium>
+        <BlanketPotassium>50</BlanketPotassium>
+        <AvblPhosphate>25</AvblPhosphate>
+        <BlanketPhosphate>50</BlanketPhosphate>
+    </SoilData>
+
+</SmartFert>

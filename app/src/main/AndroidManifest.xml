@@ -2,13 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.infosys.hackathon.smartfert" >
 
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/CustomActionBarTheme" >
         <activity
             android:name=".view.Login"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
             <intent-filter>
@@ -18,14 +21,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.Overview"
-        android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" ></activity>
 
         <activity android:name=".view.CaptureDetails"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" ></activity>
 
         <activity android:name=".view.SoilFertilizerManagement"
-            android:screenOrientation="landscape"></activity>
-
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" ></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.infosys.hackathon.smartfert.view;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.ActionBarActivity;
@@ -20,14 +21,12 @@ public class Overview extends ActionBarActivity {
             return;
 
         setContentView(R.layout.form_overview);
-
         findViewById(R.id.captureDetails).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Overview.this, CaptureDetails.class));
             }
         });
-
     }
 
 
