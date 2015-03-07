@@ -5,4 +5,20 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="CaptureLabel">
+        <item name="android:textSize">@dimen/dimen_label</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="CaptureMandatory">
+        <item name="android:textSize">@dimen/dimen_label</item>
+        <item name="android:text">*</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <style name="CaptureInput">
+        <item name="android:textSize">@dimen/dimen_label</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>
