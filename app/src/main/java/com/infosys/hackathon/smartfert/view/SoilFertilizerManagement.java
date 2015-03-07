@@ -1,13 +1,15 @@
-package com.infosys.hackathon.smartfert;
+package com.infosys.hackathon.smartfert.view;
 
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import com.infosys.hackathon.smartfert.R;
+
 /**
  * File Created by Praveen K on 05-Mar-15.
  */
-public class CaptureDetails extends Activity {
+public class SoilFertilizerManagement extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +17,6 @@ public class CaptureDetails extends Activity {
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return;
 
-        setContentView(R.layout.form_capture_details);
+        setContentView(R.layout.form_fertilizer_management);
     }
 }

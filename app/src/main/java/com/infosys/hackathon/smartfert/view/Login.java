@@ -1,10 +1,12 @@
-package com.infosys.hackathon.smartfert;
+package com.infosys.hackathon.smartfert.view;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+
+import com.infosys.hackathon.smartfert.R;
 
 /**
  * File Created by Praveen K on 05-Mar-15.

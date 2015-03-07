@@ -1,4 +1,4 @@
-package com.infosys.hackathon.smartfert;
+package com.infosys.hackathon.smartfert.view;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.infosys.hackathon.smartfert.R;
 
 
 public class Overview extends ActionBarActivity {
