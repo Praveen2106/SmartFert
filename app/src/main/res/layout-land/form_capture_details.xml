@@ -18,7 +18,7 @@
             android:textSize="@dimen/dimen_16dp"
             android:id="@+id/bankDetails"
             android:textColor="@android:color/black"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/bg_button"
             android:text="Basic Details\t>>"
             />
 
@@ -29,7 +29,7 @@
             android:textSize="@dimen/dimen_16dp"
             android:id="@+id/landDetails"
             android:textColor="@android:color/black"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/bg_button"
             android:text="Land Details\t>>"
             />
 
@@ -40,7 +40,7 @@
             android:textSize="@dimen/dimen_16dp"
             android:id="@+id/soilDetails"
             android:textColor="@android:color/black"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/bg_button"
             android:text="Soil Details\t>>"
             />
 
@@ -51,7 +51,7 @@
             android:textSize="@dimen/dimen_16dp"
             android:id="@+id/healthCardDetails"
             android:textColor="@android:color/black"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/bg_button"
             android:text="Health Card"
             />
     </LinearLayout>

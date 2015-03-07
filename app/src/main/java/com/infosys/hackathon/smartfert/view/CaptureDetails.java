@@ -136,6 +136,11 @@ public class CaptureDetails extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment basicDetails = new BasicDetails();
                 tabNumber = 1;
+                findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_1));
+                findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+
                 fm.beginTransaction().replace(R.id.frame_container, basicDetails, "1").commit();
             }
         });
@@ -146,6 +151,10 @@ public class CaptureDetails extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment landDetails = new LandDetails();
                 tabNumber = 2;
+                findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_1));
+                findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_2));
                 fm.beginTransaction().replace(R.id.frame_container, landDetails, "2").commit();
             }
         });
@@ -156,6 +165,10 @@ public class CaptureDetails extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment soilDetails = new SoilDetails();
                 tabNumber = 3;
+                findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_1));
+                findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_2));
                 fm.beginTransaction().replace(R.id.frame_container, soilDetails, "3").commit();
             }
         });
@@ -165,6 +178,10 @@ public class CaptureDetails extends ActionBarActivity {
             public void onClick(View v) {
                 Fragment healthCardDetails = new HealthCardDetails();
                 tabNumber = 4;
+                findViewById(R.id.bankDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.landDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.soilDetails).setBackground(getDrawable(R.drawable.bg_button_2));
+                findViewById(R.id.healthCardDetails).setBackground(getDrawable(R.drawable.bg_button_1));
                 fm.beginTransaction().replace(R.id.frame_container, healthCardDetails, "4").commit();
             }
         });
