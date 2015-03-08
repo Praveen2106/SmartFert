@@ -21,6 +21,7 @@ public class Overview extends ActionBarActivity {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return;
 
+        getSupportActionBar().setTitle("SmartFert - Overview");
         setContentView(R.layout.form_overview);
         findViewById(R.id.captureDetails).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,12 +56,16 @@ public class Overview extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_overview, menu);
+        getMenuInflater().inflate(R.menu.menu_about, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.action_about) {
+            startActivity(new Intent(this, AboutSmartFert.class));
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

@@ -24,6 +24,8 @@ public class SubsidyReport extends ActionBarActivity {
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return;
 
+        getSupportActionBar().setTitle("Fertilizer Subsidy Report for Farmer");
+
         setContentView(R.layout.activity_subsidy_report);
         HashMap<SmartFert.RESULT, String> mapObj = (HashMap<SmartFert.RESULT, String>) getIntent().getSerializableExtra("Result");
 

@@ -66,6 +66,7 @@ public class FertliserMgmtDashActivity extends ActionBarActivity {
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return;
 
+        getSupportActionBar().setTitle("Fertilizer Subsidy Management");
         //getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.layout_fsm_dash);
 
@@ -80,6 +81,7 @@ public class FertliserMgmtDashActivity extends ActionBarActivity {
 
         final EditText soilTestRptNo = (EditText) dialogView.findViewById(R.id.soilTestRptNo);
         fetchDetails = (Button) dialogView.findViewById(R.id.fetchDetails);
+        fetchDetails.setText("FETCH FERTILIZER SUBSIDY DETAILS");
         addNew = (Button) dialogView.findViewById(R.id.addNewSoilReport);
         addNew.setVisibility(View.GONE);
         soilData = new SoilData();
@@ -159,7 +161,7 @@ public class FertliserMgmtDashActivity extends ActionBarActivity {
 
                     XYSeriesRenderer renderer = new XYSeriesRenderer();
                     renderer.setLineWidth(2);
-                    renderer.setColor(Color.RED);
+                    renderer.setColor(Color.parseColor("#1b5e20"));
                     renderer.setDisplayBoundingPoints(true);
                     renderer.setPointStyle(PointStyle.CIRCLE);
                     renderer.setPointStrokeWidth(3);

@@ -52,6 +52,7 @@ public class CaptureDetails extends ActionBarActivity {
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             return;
 
+        getSupportActionBar().setTitle("Soil Fertility Capture");
         setContentView(R.layout.form_capture_details);
         final Fragment basicDetails = new BasicDetails();
 

@@ -35,6 +35,10 @@
         <activity android:name=".view.SubsidyReport"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden" ></activity>
+
+        <activity android:name=".view.AboutSmartFert"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden" ></activity>
     </application>
 
 </manifest>

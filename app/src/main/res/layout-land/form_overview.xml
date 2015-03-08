@@ -77,6 +77,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
+            android:id="@+id/cropInsurance"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_16dp"
             android:layout_weight="1"
@@ -95,7 +96,6 @@
                 android:textSize="@dimen/dimen_label"
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:gravity="center"
-                android:id="@+id/cropInsurance"
                 android:textColor="@android:color/black"
                 android:text="Crop Insurance"/>
         </LinearLayout>

@@ -13,7 +13,16 @@
     <string name="login_password">Password</string>
 
     <string name="dummy">Dummy Text</string>
-
+    <string name="about_smart_fert" formatted="false"><b>SmartFert is a Real time Site-Specific Soil Health Management System which would solve two hardcore economic problems of India.</b>
+\n\n<b>Problem 1:</b>
+\n\t\tGovt. of India is in the process of linking 75,000 crore fertilizer subsidy to Aadhar to cut down the wastages and leakages. Aadhar is just a unique id and just eliminates fake/duplicate beneficiaries.   For ex: If there were 100 farmers in a village among which 20 people are duplicate, UID eliminate the fake beneficiaries. <i>Here challenging problem is how to identify the right beneficiaries based on cropped area, required fertilizer per farmer and water availability</i>.
+\n\n<b>Problem 2:</b>
+        \n\t\tMajority of farmers, particularly small and marginal farmers, apply fertilizer based on their own measurement and own choice without the help of scientific knowledge that too not in a time bound manner which is one of the root cause for low productivity and low profit.
+        \n\n<b>Solution 1:</b>
+        \n\t\tIn the existing system, Govt.of. India’s mobile Fertilizer Management System (mFMS) tracks fertilizer subsidy using their forward linkage from manufacturer to dealer. They don’t backward linkage to connect to the farmers. Here SmartFert brings the last mile connect through extension worker. Using our application an extension worker could calculate the fertilizer subsidy per farmer based on cropped area and required fertilizer. It would help Govt. of. India, to cut down the leakages at least by 30% and ensures 60% ROI.
+        \n\n<b>Solution 2:</b>
+        \n\t\tUsing SmartFert fertilizer recommendation system and crop calendar an extension worker could give appropriate advisory for the farmer on time bound application of fertilizers which would help him get better yield, quality and price.
+    </string>
 
     <string-array name="ownership">
         <item>Own</item>
