@@ -55,7 +55,7 @@ public class HeaderUtil {
                 sb.append(getXMLNode("IrrigationType", soilData.getIrrigationType()));
                 sb.append(getXMLNode("CurrentCrop", soilData.getCurrentCrop()));
                 sb.append(getXMLNode("ClimaticZone", soilData.getClimaticZone()));
-                sb.append(getXMLNode("CropRotation", soilData.getCurrentCrop()));
+                sb.append(getXMLNode("CropRotation", soilData.getCropRotation()));
                 sb.append(getXMLNode("SampleDate", soilData.getSoilSampleDate()));
                 sb.append(getXMLNode("SoilTexture", soilData.getSoilTexture()));
                 sb.append(getXMLNode("CCcontent", soilData.getCalciumCarbonateContent()));
@@ -97,13 +97,11 @@ public class HeaderUtil {
                 outputStream = appContext.openFileOutput(soilData.getSoilReportNumber().toLowerCase(), Context.MODE_PRIVATE);
                 outputStream.write(sb.toString().getBytes());
                 outputStream.close();
-                Toast.makeText(appContext, "File Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(appContext, "Soil Fertilizer Details are saved.", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(appContext, "File Not Saved1", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
         } catch (Exception e) {
-            Toast.makeText(appContext, "File Saved2", Toast.LENGTH_SHORT).show();
             Log.e("HeaderUtil", e.toString());
         }
 

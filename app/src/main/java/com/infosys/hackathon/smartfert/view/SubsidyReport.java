@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.infosys.hackathon.smartfert.R;
-import com.infosys.hackathon.smartfert.utils.smarFert;
+import com.infosys.hackathon.smartfert.utils.SmartFert;
 
 import org.w3c.dom.Text;
 
@@ -25,16 +25,16 @@ public class SubsidyReport extends ActionBarActivity {
             return;
 
         setContentView(R.layout.activity_subsidy_report);
-        HashMap<smarFert.RESULT, String> mapObj = (HashMap<smarFert.RESULT, String>) getIntent().getSerializableExtra("Result");
+        HashMap<SmartFert.RESULT, String> mapObj = (HashMap<SmartFert.RESULT, String>) getIntent().getSerializableExtra("Result");
 
         tvFertiliserDetails = (TextView) findViewById(R.id.fert_details);
-        tvFertiliserDetails.setText(mapObj.get(smarFert.RESULT.UREA_PER_FARMER)+ " bags of Urea, "+mapObj.get(smarFert.RESULT.SSP_PER_FARMER)+" bags of SSP, "+mapObj.get(smarFert.RESULT.MOP_PER_FARMER)+" bags of MOP");
+        tvFertiliserDetails.setText(mapObj.get(SmartFert.RESULT.UREA_PER_FARMER)+ " bags of Urea, "+mapObj.get(SmartFert.RESULT.SSP_PER_FARMER)+" bags of SSP, "+mapObj.get(SmartFert.RESULT.MOP_PER_FARMER)+" bags of MOP");
         tvActualCost = (TextView) findViewById(R.id.actual_cost);
-        tvActualCost.setText("Rs. "+mapObj.get(smarFert.RESULT.SUBSIDY_PER_FARMER));
+        tvActualCost.setText("Rs. "+mapObj.get(SmartFert.RESULT.SUBSIDY_PER_FARMER));
         tvSubsidy = (TextView) findViewById(R.id.eligible_subsidy);
-        tvSubsidy.setText("Rs. "+mapObj.get(smarFert.RESULT.SUBSIDY_PER_FARMER));
+        tvSubsidy.setText("Rs. "+mapObj.get(SmartFert.RESULT.SUBSIDY_PER_FARMER));
         tvSubDetails = (TextView) findViewById(R.id.subsidy_details);
-        tvSubDetails.setText("Rs. "+mapObj.get(smarFert.RESULT.SUBSIDY_PER_FARMER));
+        tvSubDetails.setText("Rs. "+mapObj.get(SmartFert.RESULT.SUBSIDY_PER_FARMER));
         tvFarmerID = (TextView) findViewById(R.id.farmerid);
         String fid = getIntent().getStringExtra("FarmerID");
         tvFarmerID.setText(fid);
@@ -44,40 +44,40 @@ public class SubsidyReport extends ActionBarActivity {
         tvAcct.setText(getIntent().getStringExtra("AccountNumber"));
 
         tv_seedingUrea = (TextView) findViewById(R.id.seeding_urea);
-        tv_seedingUrea.setText(mapObj.get(smarFert.RESULT.UREA_PER_STAGE1) + " bags of Urea");
+        tv_seedingUrea.setText(mapObj.get(SmartFert.RESULT.UREA_PER_STAGE1) + " bags of Urea");
 
         tv_seedingP = (TextView) findViewById(R.id.seeding_ssp);
-        tv_seedingP.setText(mapObj.get(smarFert.RESULT.SSP_PER_STAGE1) + " bags of SSP");
+        tv_seedingP.setText(mapObj.get(SmartFert.RESULT.SSP_PER_STAGE1) + " bags of SSP");
 
         tv_seedingK = (TextView) findViewById(R.id.seeding__mop);
-        tv_seedingK.setText(mapObj.get(smarFert.RESULT.MOP_PER_STAGE1) + " bags of MOP");
+        tv_seedingK.setText(mapObj.get(SmartFert.RESULT.MOP_PER_STAGE1) + " bags of MOP");
 
         tv_transUrea = (TextView) findViewById(R.id.tp_urea);
-        tv_transUrea.setText(mapObj.get(smarFert.RESULT.UREA_PER_STAGE2) + " bags of Urea");
+        tv_transUrea.setText(mapObj.get(SmartFert.RESULT.UREA_PER_STAGE2) + " bags of Urea");
 
         tv_transP = (TextView) findViewById(R.id.tp_ssp);
-        tv_transP.setText(mapObj.get(smarFert.RESULT.SSP_PER_STAGE2) + " bags of SSP");
+        tv_transP.setText(mapObj.get(SmartFert.RESULT.SSP_PER_STAGE2) + " bags of SSP");
 
         tv_transK = (TextView) findViewById(R.id.tp_mop);
-        tv_transK.setText(mapObj.get(smarFert.RESULT.MOP_PER_STAGE2) + " bags of MOP");
+        tv_transK.setText(mapObj.get(SmartFert.RESULT.MOP_PER_STAGE2) + " bags of MOP");
 
         tv_tillerUrea = (TextView) findViewById(R.id.tiller_urea);
-        tv_tillerUrea.setText(mapObj.get(smarFert.RESULT.UREA_PER_STAGE3) + " bags of Urea");
+        tv_tillerUrea.setText(mapObj.get(SmartFert.RESULT.UREA_PER_STAGE3) + " bags of Urea");
 
         tv_tillerP = (TextView) findViewById(R.id.tiller_ssp);
-        tv_tillerP.setText(mapObj.get(smarFert.RESULT.SSP_PER_STAGE3) + " bags of SSP");
+        tv_tillerP.setText(mapObj.get(SmartFert.RESULT.SSP_PER_STAGE3) + " bags of SSP");
 
         tv_tillerK = (TextView) findViewById(R.id.tiller_mop);
-        tv_tillerK.setText(mapObj.get(smarFert.RESULT.MOP_PER_STAGE3) + " bags of MOP");
+        tv_tillerK.setText(mapObj.get(SmartFert.RESULT.MOP_PER_STAGE3) + " bags of MOP");
 
         tv_panicleUrea = (TextView) findViewById(R.id.panicle_urea);
-        tv_panicleUrea.setText(mapObj.get(smarFert.RESULT.UREA_PER_STAGE4) + " bags of Urea");
+        tv_panicleUrea.setText(mapObj.get(SmartFert.RESULT.UREA_PER_STAGE4) + " bags of Urea");
 
         tv_panicleP = (TextView) findViewById(R.id.panicle_ssp);
-        tv_panicleP.setText(mapObj.get(smarFert.RESULT.SSP_PER_STAGE4) + " bags of SSP");
+        tv_panicleP.setText(mapObj.get(SmartFert.RESULT.SSP_PER_STAGE4) + " bags of SSP");
 
         tv_panicleK = (TextView) findViewById(R.id.panicle_mop);
-        tv_panicleK.setText(mapObj.get(smarFert.RESULT.MOP_PER_STAGE4) + " bags of MOP");
+        tv_panicleK.setText(mapObj.get(SmartFert.RESULT.MOP_PER_STAGE4) + " bags of MOP");
     }
 
 

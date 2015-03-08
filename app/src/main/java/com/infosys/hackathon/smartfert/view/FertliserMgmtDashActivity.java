@@ -26,7 +26,7 @@ import com.infosys.hackathon.smartfert.data.SoilData;
 import com.infosys.hackathon.smartfert.data.SoilFertilityData;
 import com.infosys.hackathon.smartfert.http.DataParser;
 import com.infosys.hackathon.smartfert.utils.HeaderUtil;
-import com.infosys.hackathon.smartfert.utils.smarFert;
+import com.infosys.hackathon.smartfert.utils.SmartFert;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.GraphicalView;
@@ -222,16 +222,21 @@ public class FertliserMgmtDashActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_calculate) {
-            smarFert obj = new smarFert();
-            Map<smarFert.RESULT, String> calculatedSubsidyMap = obj.calcSub(Math.round(landData.getLandArea()), Math.round(soilData.getAvailableNitrogenContent()),
+            SmartFert obj = new SmartFert();
+            Map<SmartFert.RESULT, String> calculatedSubsidyMap = obj.calcSub(Math.round(landData.getLandArea()), Math.round(soilData.getAvailableNitrogenContent()),
                     Math.round(soilData.getAvailablePhosphateContent()), Math.round(soilData.getAvailablePotassiumContent()));
-            HashMap<smarFert.RESULT, String> map = new HashMap<smarFert.RESULT, String>(calculatedSubsidyMap);
-            Intent launchReport = new Intent(getApplicationContext(), SubsidyReport.class);
-            launchReport.putExtra("Result", map);
-            launchReport.putExtra("FarmerID", farmerData.getFarmerId());
-            launchReport.putExtra("FarmerName", farmerData.getFarmerName());
-            launchReport.putExtra("AccountNumber", farmerData.getAccountNumber());
-            startActivity(launchReport);
+
+            if(calculatedSubsidyMap.size() > 0) {
+                HashMap<SmartFert.RESULT, String> map = new HashMap<SmartFert.RESULT, String>(calculatedSubsidyMap);
+                Intent launchReport = new Intent(getApplicationContext(), SubsidyReport.class);
+                launchReport.putExtra("Result", map);
+                launchReport.putExtra("FarmerID", farmerData.getFarmerId());
+                launchReport.putExtra("FarmerName", farmerData.getFarmerName());
+                launchReport.putExtra("AccountNumber", farmerData.getAccountNumber());
+                startActivity(launchReport);
+            } else {
+                Toast.makeText(this, "Soil is in good health. No fertilizers are required.", Toast.LENGTH_SHORT).show();
+            }
         }
 
         return false;

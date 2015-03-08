@@ -3,11 +3,8 @@ package com.infosys.hackathon.smartfert.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-public class smarFert {
+public class SmartFert {
 
-	public static void main(String[] args) {
-		calcSub(4, 45, 35, 25);
-	}
 	public enum RESULT
     {
 		SUBSIDY_PER_FARMER,
@@ -122,8 +119,8 @@ public class smarFert {
 			m.put(RESULT.SSP_PER_STAGE4,String.valueOf(reqSSPBags4));
 			m.put(RESULT.MOP_PER_STAGE4,String.valueOf(reqMOPBags4));
 		}
-		return (HashMap<RESULT, String>) m;
 
+		return (HashMap<RESULT, String>) m;
 	}
 
 }

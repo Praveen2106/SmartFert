@@ -82,12 +82,12 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
         String[] phContentArray = getResources().getStringArray(R.array.calciumCarbonate);
 
         avlOC.setText(String.valueOf(CaptureDetails.soilData.getAvailableOrganicContent()));
-        avlKC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePhosphateContent()));
-        avlPC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePotassiumContent()));
+        avlPC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePhosphateContent()));
+        avlKC.setText(String.valueOf(CaptureDetails.soilData.getAvailablePotassiumContent()));
         avlNC.setText(String.valueOf(CaptureDetails.soilData.getAvailableNitrogenContent()));
         bOC.setText(String.valueOf(CaptureDetails.soilData.getBlanketOrganicContent()));
-        bKC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPhosphateContent()));
-        bPC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPotassiumContent()));
+        bPC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPhosphateContent()));
+        bKC.setText(String.valueOf(CaptureDetails.soilData.getBlanketPotassiumContent()));
         bNC.setText(String.valueOf(CaptureDetails.soilData.getBlanketNitrogenContent()));
 
         try {
@@ -175,18 +175,13 @@ public class HealthCardDetails extends Fragment implements  View.OnClickListener
 
         CaptureDetails.soilData.setAvailableNitrogenContent(Float.valueOf(avlNC.getText().toString()));
         CaptureDetails.soilData.setAvailableOrganicContent(Float.valueOf(avlOC.getText().toString()));
-        CaptureDetails.soilData.setAvailablePhosphateContent(Float.valueOf(avlKC.getText().toString()));
-        CaptureDetails.soilData.setAvailablePotassiumContent(Float.valueOf(avlPC.getText().toString()));
+        CaptureDetails.soilData.setAvailablePhosphateContent(Float.valueOf(avlPC.getText().toString()));
+        CaptureDetails.soilData.setAvailablePotassiumContent(Float.valueOf(avlKC.getText().toString()));
 
         CaptureDetails.soilData.setBlanketNitrogenContent(Float.valueOf(bNC.getText().toString()));
         CaptureDetails.soilData.setBlanketOrganicContent(Float.valueOf(bOC.getText().toString()));
-        CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(bKC.getText().toString()));
-        CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(bPC.getText().toString()));
-
-        CaptureDetails.soilData.setBlanketNitrogenContent(Float.valueOf(150));
-        CaptureDetails.soilData.setBlanketOrganicContent(Float.valueOf(0));
-        CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(50));
-        CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(50));
+        CaptureDetails.soilData.setBlanketPhosphateContent(Float.valueOf(bPC.getText().toString()));
+        CaptureDetails.soilData.setBlanketPotassiumContent(Float.valueOf(bKC.getText().toString()));
     }
 
     @Override

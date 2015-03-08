@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.infosys.hackathon.smartfert.R;
 
@@ -32,6 +33,20 @@ public class Overview extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Overview.this, FertliserMgmtDashActivity.class));
+            }
+        });
+
+        findViewById(R.id.cropAnalytics).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Overview.this, "Feature not yet implemented!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        findViewById(R.id.cropInsurance).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Overview.this, "Feature not yet implemented!", Toast.LENGTH_SHORT).show();
             }
         });
     }

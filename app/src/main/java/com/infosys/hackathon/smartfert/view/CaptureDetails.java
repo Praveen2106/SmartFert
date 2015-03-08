@@ -95,6 +95,11 @@ public class CaptureDetails extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 try {
+                    if(soilTestRptNo.getText().toString().equals("")) {
+                        Toast.makeText(CaptureDetails.this, "Enter the Soil Test Report Number", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     soilData.setSoilReportNumber(soilTestRptNo.getText().toString());
                     InputStream ins = new ByteArrayInputStream(HeaderUtil.getFileData(soilData.getSoilReportNumber().toLowerCase(), getApplicationContext()).getBytes());
                     //InputStream ins = getResources().openRawResource(getResources().getIdentifier("raw/report1","raw", getPackageName()));
