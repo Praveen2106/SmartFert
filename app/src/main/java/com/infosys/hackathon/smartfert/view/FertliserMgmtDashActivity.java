@@ -154,7 +154,7 @@ public class FertliserMgmtDashActivity extends ActionBarActivity {
                     layout1.addView(chartView1);
 
                     /** chart 4 */
-                    XYSeries series = new XYSeries("Available NPK");
+                    XYSeries series = new XYSeries("Year-wise subsidy distribution");
                     series.add(2012, 2231);
                     series.add(2013, 4123);
                     series.add(2014,3887);
